@@ -20,65 +20,110 @@ h2{
 
 .wrap{
     width: 100%;
-   .tab_header{
-       position: fixed;
-       top: 0;
-       width: 100%;
-       height: 40px;
-       font-size: 14px;
-       z-index: 20;
-       background: @gray-e0;
-       .header_loader{
-           position: absolute;
-           left: 10px;
-           top: 10px;
-       }
-       .header_btn{
-           position: absolute;
-           right: 10px;
-           top: 10px;
-           border-left: 1px solid @gray-6;
-           padding-left:10px;
-       }
-   }
-   .tab_content{
-       width: 100%;
-       margin-top: 40px;
-       .goods_item{
-           position: relative;
-           display: inline-block;
-           width: 50%;
-           background: orange;
-           img{
-               position: absolute;
-               left: 50%;
-               top: 10px;
-               margin-left: -50px;
-               width: 100px;
-               height: 100px;
-               overflow: hidden;
-           }
-           .goods_item_info{
-               margin: 120px 10px 0;
-               font-size: 14px;
-               .item_name{
-                   //超出两行打点
-                   display: -webkit-box;
-                   -webkit-box-orient: vertical;
-                   -webkit-line-clamp: 2;
-                   word-break: break-all;
-                   overflow: hidden;
-               }
-           }
-       }
-   }
-   .goods_info_wrap{
-       position: fixed;
-       top: 40px;
-       bottom: 0;
-       right: 0;
-       background: @gray-e0;
-       width: 100%;
-       z-index: 30;
-   }
+    .tab_header{
+        position:fixed;
+        top:0px;
+        width:100%;
+        height: 40px;
+        background:@gray-e0;
+        font-size: 14px;
+        z-index: 20;
+        .header_loader{
+            position: absolute;
+            left:10px;
+            top:10px;
+        }
+        .header_btn{
+            position: absolute;
+            right:10px;
+            top:10px;
+            border-left: 1px solid @gray-6;
+            padding-left:10px;
+        }
+    }
+    .tab_content{
+        margin-top:40px;
+        width: 100%;
+        .goods_item{
+            position: relative;
+            display: inline-block;
+            width: 50%;
+            background: lightcoral;
+            img{
+                position:absolute;
+                left: 50%;
+                top: 10px;
+                margin-left: -50px;
+                width: 100px;
+                height:100px;
+                overflow: hidden;
+                border: 1px solid #333;
+            }
+            .goods_item_info{
+                margin:120px 10px 0;
+                font-size: 14px;
+
+                .item_name{
+                    //超出两行打点
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    word-break: break-all;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .goods_info_wrap{
+        position: absolute;
+        top: 40px;
+        bottom:0;
+        background: @gray-e0;
+        width: 100%;
+        z-index: 10;
+        .infor_wrap{
+            background: @white;
+        }
+        .info_one{
+            img{
+                width:100%;
+            }
+            .one_wrap{
+                margin:0 10px;
+                .one_price{
+                    color: @red;
+                    padding: 10px 0;
+                }
+            }
+        }
+        .info_two{
+            p{
+                position: relative;
+                padding: 10px 0;
+                margin: 0 10px;
+                span{
+                    position: absolute;
+                    right: 10px;
+                }
+            }
+        }
+        .info_three{
+            p{
+                margin: 10px 10px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .info_four{
+            width: 100%;
+            background: @red;
+            text-align: center;
+            padding: 10px 0;
+            a{
+                color: @white;
+                text-decoration:none;
+            }
+        }
+    }
 }

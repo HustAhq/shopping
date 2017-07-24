@@ -5,7 +5,7 @@ module.exports = {
         'home' : './src/js/Entry.js'
     },
     output:{
-        path: __dirname + './assect/js/',
+        path: __dirname + './assect/js/',//绝对路径
         filename: '[name].js',
         publicPath: 'http://localhost:8080/static/assect/js/'
     },

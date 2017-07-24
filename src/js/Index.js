@@ -54,17 +54,18 @@ export default class Index extends React.Component{
             })
         })
     }
-    showGoodsList (val) {
+    showGoodsList (val, activeGoods) {
         this.setState({
-            showGoodsInfo : val
+            showGoodsInfo : val,
+            activeGoods : activeGoods
         })
     }
     render () {
        const goodsList = this.state.goodsList;
        const goodsListArr = [];
-       if(goodsList){
+       if(goodsList != ''){
            goodsList.forEach((item, index)=>{
-                goodsListArr.push(<GoodsItem key={index} 
+                goodsListArr.push(<GoodsItem key={index}  activeGoods={item}
                 handleshowGoodsList={this.showGoodsList.bind(this)}></GoodsItem>)
             });
         }
@@ -77,7 +78,7 @@ export default class Index extends React.Component{
                <div className="tab_content">
                    {goodsListArr}
                </div>
-               {this.state.showGoodsInfo === '1'? <GoodsInfor></GoodsInfor> : null}
+               {this.state.showGoodsInfo === '1'? <GoodsInfor activeGoods={this.state.activeGoods}></GoodsInfor> : null}
            </div>
        )
     }
