@@ -2,10 +2,10 @@ var webpack = require('webpack');
 
 module.exports = {
     entry:{
-        'home' : './src/js/entry.js'
+        'home' : './src/js/Entry.js'
     },
     output:{
-        path:'./assect/js/',
+        path: __dirname + './assect/js/',
         filename: '[name].js',
         publicPath: 'http://localhost:8080/static/assect/js/'
     },
@@ -15,7 +15,7 @@ module.exports = {
                 test: /\.css$/,loader: 'style-loader!css-loader'
             },
             {
-                test: /\.less$/,loader: 'style!css!less'
+                test: /\.less$/,loader: 'style-loader!css-loader!less-loader'
             },
             {
                 test: /\.js$/, 
@@ -39,6 +39,6 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve : {
-        extensions : ['','.js','.jsx']
+        extensions : ['.js','.jsx']
     }
 }
