@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import $ from 'jquery';
+import BuyWindow from './BuyWindow';
 
 
 export default class GoodsInfor extends React.Component{
     constructor(){
         super();
+        this.state = {
+            showBuyWindow : '0'//是否展示showBuyWindow 1是展示其他不展示
+        }
     }
-
+    showBuyWindow () {
+        this.setState({
+            showBuyWindow : '1'
+        })
+    }
+    closeBuyWindow (val) {
+        this.setState({
+            showBuyWindow : val
+        })
+    }
     render(){
         let activeGoods = this.props.activeGoods;
         console.log(activeGoods )
@@ -34,7 +47,7 @@ export default class GoodsInfor extends React.Component{
                         <p className="one_price">&#165; {mixPrice}~ {maxPrice}</p>
                     </div>
                 </div>
-                <div className="info_two infor_wrap">
+                <div className="info_two infor_wrap" onClick={this.showBuyWindow.bind(this)}>
                     <p className="two">选择&nbsp;商品型号
                         <span>></span>
                     </p>
@@ -47,6 +60,10 @@ export default class GoodsInfor extends React.Component{
                 <div className="info_four infor_wrap">
                     <a href="">立即购买</a>
                 </div> 
+                {
+                    this.state.showBuyWindow === '1' ? <BuyWindow 
+                    handlecloseBuyWindow={this.closeBuyWindow.bind(this)}></BuyWindow> : null
+                }
             </div>
         )
     }
