@@ -4,7 +4,6 @@ module.exports = {
     entry:{
         'home' : './src/js/entry.js'
     },
-    // entry: ['babel-polyfill', './src/js/entry.js'],
     output:{
         path:'./assect/js/',
         filename: '[name].js',
