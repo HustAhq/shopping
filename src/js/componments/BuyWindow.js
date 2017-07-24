@@ -29,8 +29,7 @@ export default class BuyWindow extends React.Component{
                             <ul>
                                 <li>规格1</li>
                                 <li>规格2</li>
-                                <li>规格3</li>
-                                <li>规格3</li>
+                                <li>规格3</li>                              
                             </ul>
                         </div>
                     </div>
@@ -39,7 +38,7 @@ export default class BuyWindow extends React.Component{
                         <div className="buy_number_wrap">
                             <ul>
                                 <li>-</li>
-                                <li>1</li>
+                                <li className="buy_number_value">1</li>
                                 <li>+</li>
                             </ul>
                         </div>
