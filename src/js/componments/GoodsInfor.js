@@ -34,7 +34,12 @@ export default class GoodsInfor extends React.Component{
     }
     submitOk() {
         if(this.state.number){
-            let _url = './submit.html';
+            let name = encodeURIComponent(this.props.activeGoods.name);
+            let price = this.state.activeHPrice;
+            let number = this.state.number;
+            let spect = encodeURIComponent(this.state.activeHSpect);
+            let img = this.props.activeGoods.imgurl[0];
+            let _url = './submit.html?name=' + name + '&price=' + price + '&number=' + number + '&spect=' + spect + '&img=' + img;
             location.href = _url;
         }
     }

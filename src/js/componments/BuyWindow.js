@@ -109,7 +109,7 @@ export default class BuyWindow extends React.Component{
                         </div>
                     </div>
                     <div className="buy_ok" onClick={this.sureSpect.bind(this)}>
-                        <a href="javascript:;">确认购买</a>
+                        <a href="javascript:;">确认</a>
                     </div>
                 </div>
             </div>

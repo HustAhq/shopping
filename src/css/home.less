@@ -283,13 +283,32 @@ h2{
                height: 80px;
            } 
            .content_three_infor{
-               .right{
-                   position: absolute;
-                   right: 10px;
+               .three_infor_title{
+                    padding: 10px 10px 10px 0;
+                    .left_name{
+                        // float: left;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 1;
+                        word-break: break-all;
+                        overflow: hidden;
+                    }
+                    .right_price{
+                        float: right;
+                        margin-top: -16px;
+                    }
                }
                .three_infor_gray{
                    color: @gray-3;
-                   margin-top: 28px;
+                    height: 30px;
+                    line-height: 30px;
+                    padding: 0px 10px 10px 0;
+                   .left_spect{
+                       float: left;
+                   }
+                   .right_number{
+                       float: right;
+                   }
                }
            }
            .clear{
@@ -341,4 +360,57 @@ h2{
             color: @white;
         }
     }
+    .address_wrap{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: @gray-e0;
+        p{
+            padding: 0;
+            margin: 0;
+        }
+        .address_header{
+            position: relative;
+            background: @white;
+            border-bottom: 1px solid @gray-6; 
+            .address_btn{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+            }
+            .address_list{
+                padding: 10px;
+                text-align: center;
+            }
+        }
+        .address_content{
+            .address-item{
+                position: relative;
+                padding: 10px;
+                background: @white;
+                border-bottom: 1px solid @gray-6;
+                .address_radius{
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -9px;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    border: 1px solid @gray-6;
+                }
+                .active_radius{
+                    background: @red;
+                    border: 1px solid @red;
+                }
+                .address_right{
+                    margin-left: 36px;
+                    .address_phone{
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
 }
+
