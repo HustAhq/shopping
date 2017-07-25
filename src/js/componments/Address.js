@@ -18,6 +18,9 @@ export default class Address extends React.Component{
        this.props.handleAddChooseAddress(closeAddress, item);
     }
     render(){
+        let name = this.props.name;
+        let phone = this.props.phone;
+        let address = this.props.address;
         let userInfor = this.props.userInfor;
         let userInforArr = [];
         userInfor.forEach((item, index)=>{

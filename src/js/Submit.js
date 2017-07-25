@@ -60,13 +60,16 @@ export default class Submit extends React.Component{
        })
     }
     addChooseAddress(closeAddress, item){
-       console.log( item);
        this.setState({
             activeName: item.name,
             activePhone: item.mobile,
             activeAdderss: item.orderAdderss,
             showAddress : '0'
        })
+    }
+    toIndex(){
+        let _url = './index.html';
+        location.href = _url;
     }
     render(){
         //输出转码decodeURIComponent
@@ -118,12 +121,15 @@ export default class Submit extends React.Component{
                         <span className="total_price_gray">总价:&nbsp;  </span>
                         <span className="total_price_value"> &#165;{allPrice}</span>
                     </div>
-                    <div className="submit_btn">提交订单</div>
+                    <div className="submit_btn" onClick={this.toIndex.bind(this)}>提交订单</div>
                 </div>
                  {
                      this.state.showAddress == '1' ? <Address userInfor={this.state.userInfor}
                      handleShowAddress={this.showAddressBack.bind(this)}
-                     handleAddChooseAddress={this.addChooseAddress.bind(this)}></Address> : null
+                     handleAddChooseAddress={this.addChooseAddress.bind(this)}
+                     address={this.state.activeAdderss}
+                     phone={this.state.activePhone}
+                     name={this.state.activeName}></Address> : null
                  }
             </div>
         )

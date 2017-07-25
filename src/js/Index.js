@@ -60,6 +60,10 @@ export default class Index extends React.Component{
             activeGoods : activeGoods
         })
     }
+    order(){
+        let _url = './order.html?name=' + encodeURIComponent(this.state.loadInfor.name);
+        location.href = _url;
+    }
     render () {
        const goodsList = this.state.goodsList;
        const goodsListArr = [];
@@ -69,11 +73,12 @@ export default class Index extends React.Component{
                 handleshowGoodsList={this.showGoodsList.bind(this)}></GoodsItem>)
             });
         }
+        console.log(this.state.loadInfor)
        return (
            <div className="wrap">
                <div className="tab_header">
                    <div className="header_loader">Hi, {this.state.loadInfor.name}</div>
-                   <div className="header_btn">我的订单</div>
+                   <div className="header_btn" onClick={this.order.bind(this)}>我的订单</div>
                </div>
                <div className="tab_content">
                    {goodsListArr}
